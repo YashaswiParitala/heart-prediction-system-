@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Report PDF</title>
+</head>
+<body>
+    <h1>Heart Disease Prediction Report</h1>
+    <p><strong>Risk Probability:</strong> {{ percent }}%</p>
+    <p><strong>Risk Level:</strong> {{ risk_text }}</p>
+    <h3>Suggestions:</h3>
+    <ul>
+        {% for s in suggestions %}
+            <li>{{ s }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

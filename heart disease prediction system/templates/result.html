@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="result-box">
+        <h2>Prediction Result</h2>
+        <p><strong>Risk Percentage:</strong> {{ percent }}%</p>
+        <p><strong>Risk Level:</strong> {{ risk_text }}</p>
+
+        <h3>Suggestions / Precautions:</h3>
+        <ul>
+            {% for suggestion in suggestions %}
+                <li>{{ suggestion }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Feature Importance Chart</h3>
+        <img src="{{ url_for('static', filename='feature_importance.png') }}" alt="Feature Importance Chart">
+
+        <a href="{{ url_for('download_pdf') }}">Download Report as PDF</a>
+<br>        
+        <a href="{{ url_for('predict') }}">Back to Prediction</a>
+    </div>
+</body>
+</html>
